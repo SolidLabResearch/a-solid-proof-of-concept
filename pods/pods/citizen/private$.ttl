@@ -1,0 +1,3 @@
+@prefix : <https://a-solid.ilabt.imec.be/vocabulary#> .
+
+<http://localhost:3000/webid/citizen#me> :getsIncomeGuaranteeForElderly true.

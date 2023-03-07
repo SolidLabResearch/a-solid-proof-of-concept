@@ -1,0 +1,51 @@
+@prefix : <https://a-solid.ilabt.imec.be/vocabulary#> .
+
+{
+    ?person :getsIncomeGuaranteeForElderly true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.
+
+{
+    ?person :getsLivingWage true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.
+
+{
+    ?person :getsLivingMinimum true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.
+
+{
+    ?person :hasDisability ?disability;
+      :getsIncomeReplacementAllowance true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.
+
+{
+    ?person :hasDisability ?disability;
+      :getsIntegrationAllowance true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.
+
+{
+    ?person :getsCareBudget true.
+}
+=> 
+{
+    ?person :isSocialTariffEligible true.
+}.

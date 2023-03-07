@@ -1,0 +1,11 @@
+{
+  "name": "pods",
+  "version": "0.0.1",
+  "description": "Template pod setup for A-Solid project",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "reset": "rm -r ./pods && git checkout ./pods/*",
+    "start": "USER_UID=\"$(id -u)\" USER_GID=\"$(id -g)\" docker compose -f config/css-docker.yaml up"
+  }
+}

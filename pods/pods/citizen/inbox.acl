@@ -1,0 +1,14 @@
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<#owner>
+    a acl:Authorization;
+    acl:accessTo <./inbox>;
+    acl:agent <http://localhost:3000/webid/citizen#me>;
+    acl:mode acl:Read, acl:Write, acl:Control.
+
+<#public>
+    a acl:Authorization;
+    acl:agentClass foaf:Agent;
+    acl:accessTo <./inbox>;
+    acl:mode acl:Write.

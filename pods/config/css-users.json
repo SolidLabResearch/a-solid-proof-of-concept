@@ -1,0 +1,47 @@
+[
+  {
+    "podName": "citizen",
+    "email": "citizen@example.com",
+    "password": "citizen123",
+    "createWebId": false,
+    "createPod": true,
+    "webId": "http://localhost:3000/webid/citizen#me",
+    "register": true
+  },
+  {
+    "podName": "company",
+    "email": "company@example.com",
+    "password": "company123",
+    "createWebId": false,
+    "createPod": true,
+    "webId": "http://localhost:3000/webid/company#me",
+    "register": true
+  },
+  {
+    "podName": "government",
+    "email": "government@example.com",
+    "password": "government123",
+    "createWebId": false,
+    "createPod": true,
+    "webId": "http://localhost:3000/webid/government#me",
+    "register": true
+  },
+  {
+    "podName": "benefit-calculation-orchestrator",
+    "email": "benefit-calculation-orchestrator@example.com",
+    "password": "benefitorchestrator123",
+    "createWebId": false,
+    "createPod": true,
+    "webId": "http://localhost:3000/webid/benefit-calculation-orchestrator#me",
+    "register": true
+  },
+  {
+    "podName": "invoice-calculation-orchestrator",
+    "email": "invoice-calculation-orchestrator@example.com",
+    "password": "invoiceorchestrator123",
+    "createWebId": false,
+    "createPod": true,
+    "webId": "http://localhost:3000/webid/invoice-calculation-orchestrator#me",
+    "register": true
+  }
+]

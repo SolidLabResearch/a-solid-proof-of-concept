@@ -1,0 +1,55 @@
+@prefix : <urn:example:> .
+@prefix social: <https://a-solid.ilabt.imec.be/vocabulary#> .
+@prefix schema: <http://schema.org/> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+
+{
+    ?invoice a schema:Invoice;
+      schema:customer ?citizen;
+      schema:totalPaymentDue [
+        schema:value ?totalPrice
+      ].
+
+    ?citizen social:isSocialTariffEligible true.
+
+    (?totalPrice 5) math:quotient ?citizenPrice . # ?totalPrice divided by 5.
+    (?citizenPrice 4) math:product ?governmentPrice. # 1/5 times 4 to get 80% of original price.
+}
+=>
+{
+    _:1 a schema:Invoice, social:SubInvoice;
+      schema:customer ?citizen;
+      schema:totalPaymentDue [
+        a schema:MonetaryAmount;
+        schema:value ?citizenPrice
+      ];
+      social:paysPartOfInvoice ?invoice.
+
+    _:2 a schema:Invoice, social:SubInvoice;
+      schema:customer <http://localhost:3000/webid/government#me>;
+      schema:totalPaymentDue [
+        a schema:MonetaryAmount;
+        schema:value ?governmentPrice
+      ];
+      social:paysPartOfInvoice ?invoice.
+} .
+
+{
+    ?invoice a schema:Invoice;
+      schema:customer ?citizen;
+      schema:totalPaymentDue [
+        schema:value ?totalPrice
+      ].
+
+    ?citizen social:isSocialTariffEligible false.
+}
+=>
+{
+    _:1 a schema:Invoice, social:SubInvoice;
+      schema:customer ?citizen;
+      schema:totalPaymentDue [
+        a schema:MonetaryAmount;
+        schema:value ?totalPrice
+      ];
+      social:paysPartOfInvoice ?invoice.
+} .

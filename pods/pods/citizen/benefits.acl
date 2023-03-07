@@ -1,0 +1,19 @@
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+<#owner>
+    a acl:Authorization;
+    acl:accessTo <./benefits>;
+    acl:agent <http://localhost:3000/webid/citizen#me>;
+    acl:mode acl:Read, acl:Write, acl:Control.
+
+<#benefit-orchestrator>
+    a acl:Authorization;
+    acl:accessTo <./benefits>;
+    acl:agent <http://localhost:3000/webid/benefit-calculation-orchestrator#me>;
+    acl:mode acl:Read, acl:Write.
+
+<#invoice-orchestrator>
+    a acl:Authorization;
+    acl:accessTo <./benefits>;
+    acl:agent <http://localhost:3000/webid/invoice-calculation-orchestrator#me>;
+    acl:mode acl:Read.

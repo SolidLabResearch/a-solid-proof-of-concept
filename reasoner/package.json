@@ -1,0 +1,11 @@
+{
+  "name": "reasoner",
+  "version": "0.0.1",
+  "description": "Docker setup for EYE server for the A-Solid project",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "docker build -t a-solid/eyeserver:latest .",
+    "start": "docker compose -f compose.yaml up --remove-orphans"
+  }
+}

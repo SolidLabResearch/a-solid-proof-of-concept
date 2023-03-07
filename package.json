@@ -1,0 +1,18 @@
+{
+  "name": "a-solid-proof-of-concept",
+  "version": "0.0.1",
+  "description": "Example setup of A-Solid components for demo purposes",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "setup:demo": "yarn setup:pods && yarn setup:reasoner && yarn setup:orchestrator",
+    "setup:pods": "cd ./pods && yarn reset",
+    "setup:reasoner": "cd ./reasoner && yarn build",
+    "setup:orchestrator": "cd ./orchestrator && yarn install --frozen-lockfile --ignore-engines && yarn build",
+    "start:reasoner": "cd ./reasoner && yarn start",
+    "start:pods": "cd ./pods && yarn start",
+    "start:benefits-orchestrator": "cd orchestrator && yarn orchestrator:benefits",
+    "start:invoice-orchestrator": "cd orchestrator && yarn orchestrator:invoices",
+    "reset:invoices": "cd ./pods/pods/company && echo \"\" > invoice-citizen\\$.ttl && echo \"\" > invoice-government\\$.ttl"
+  }
+}

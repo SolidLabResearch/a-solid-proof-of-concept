@@ -1,0 +1,17 @@
+{
+  "agent": "InvoiceGenerationAgent",
+  "config": {
+    "email": "invoice-calculation-orchestrator@example.com",
+    "name": "invoice-calculation-orchestrator",
+    "password": "invoiceorchestrator123",
+    "idp": "http://localhost:3000/",
+    "reasoner": "http://localhost:8000/"
+  },
+  "tasks": [
+    {
+      "input": "http://localhost:3000/company/invoice",
+      "rules": "http://localhost:3000/government/rules/invoice",
+      "output": "http://localhost:3000/company/invoice-{customer}"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pim: <http://www.w3.org/ns/pim/space#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<> a foaf:PersonalProfileDocument;
+    foaf:maker <#me>;
+    foaf:primaryTopic <#me>.
+
+<#me> a foaf:Person;
+    foaf:givenName "Nathalie";
+    foaf:name "Nathalie";
+    solid:oidcIssuer <http://localhost:3000/>;
+    ldp:inbox <http://localhost:3000/citizen/inbox>;
+    pim:storage <http://localhost:3000/citizen/>;
+    rdfs:seeAlso <http://localhost:3000/citizen/private>;
+    rdfs:seeAlso <http://localhost:3000/citizen/benefits>.

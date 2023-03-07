@@ -1,0 +1,9 @@
+@prefix social: <https://a-solid.ilabt.imec.be/vocabulary#> .
+@prefix schema: <http://schema.org/> .
+
+<#invoice> a schema:Invoice;
+  schema:customer <http://localhost:3000/webid/citizen#me>;
+  schema:totalPaymentDue [
+    a schema:MonetaryAmount;
+    schema:value 100
+  ].

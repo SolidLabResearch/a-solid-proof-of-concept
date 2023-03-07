@@ -1,0 +1,6 @@
+services:
+  eyeserver:
+    image: a-solid/eyeserver:latest
+    ports:
+      - "8000:8000"
+    #network_mode: host

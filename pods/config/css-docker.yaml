@@ -1,0 +1,27 @@
+services:
+  solid-server:
+    image: solidproject/community-server:5
+    # for running with current user, set USER_UID and USER_GID to current user's
+    user: ${USER_UID}:${USER_GID}
+    ports:
+      - "3000:3000"
+    environment:
+      - CSS_CONFIG=/config/server.json
+      - CSS_ROOT_FILE_PATH=/pods
+      - CSS_SEEDED_POD_CONFIG_JSON=/config/pods.json
+    volumes:
+      - type: bind
+        source: ../pods
+        target: /pods
+      - type: bind
+        source: ./css-users.json
+        target: /config/pods.json
+      - type: bind
+        source: ./css.json
+        target: /config/server.json
+      - type: bind
+        source: ../templatepod
+        target: /config/templatepod
+      # these lines make the current computer's users and groups available in the container
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro

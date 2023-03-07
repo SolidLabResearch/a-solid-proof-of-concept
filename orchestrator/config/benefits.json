@@ -1,0 +1,18 @@
+{
+  "agent": "BenefitEligibilityUpdateAgent",
+  "config": {
+    "email": "benefit-calculation-orchestrator@example.com",
+    "name": "benefit-calculation-orchestrator",
+    "password": "benefitorchestrator123",
+    "idp": "http://localhost:3000/",
+    "reasoner": "http://localhost:8000/"
+  },
+  "tasks": [
+    {
+      "webid": "http://localhost:3000/webid/citizen#me",
+      "input": "http://localhost:3000/citizen/private",
+      "rules": "http://localhost:3000/government/rules/social-tariff",
+      "output": "http://localhost:3000/citizen/benefits"
+    }
+  ]
+}
